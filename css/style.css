@@ -1,0 +1,53 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #1a1630;
+  font-family: Georgia, serif;
+}
+
+/* The wrapper keeps the arches glued to the image at any screen size */
+.cover {
+  position: relative;
+  max-width: 1648px;
+  margin: 0 auto;
+}
+
+.cover img {
+  width: 100%;
+  display: block;
+}
+
+/* Each arch is an invisible link placed over the image */
+.arch {
+  position: absolute;
+  top: 14%;
+  width: 15%;
+  height: 76%;
+  border-radius: 50% 50% 0 0 / 28% 28% 0 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+  transition: background 0.3s ease;
+}
+
+.arch span {
+  opacity: 0;
+  margin-bottom: 8%;
+  padding: 4px 12px;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 4px;
+  transition: opacity 0.3s ease;
+}
+
+.arch:hover,
+.arch:focus-visible {
+  background: rgba(255, 255, 255, 0.18);
+  outline: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+.arch:hover span,
+.arch:focus-visible span {
+  opacity: 1;
+}
