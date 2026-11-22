@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!--
+    The image and the arch shapes live in ONE svg with the same coordinate
+    system (2560 x 1440 = your image size). They always scale and crop together,
+    so each clickable arch stays exactly on top of its arch in the image.
+    The arch outlines were traced from the real render (cover-2560.webp).
+  -->
+  <svg class="cover" viewBox="0 0 2560 1440" preserveAspectRatio="xMidYMid slice"
+       role="img" aria-label="Portfolio cover: gothic pavilion with five arches">
+
+    <defs>
+      <!-- Blue-purple shine used when an arch is hovered -->
+      <linearGradient id="shine" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0"   stop-color="#9d8cff" stop-opacity="0.42"/>
+        <stop offset="0.5" stop-color="#6f7dff" stop-opacity="0.24"/>
+        <stop offset="1"   stop-color="#8a5cff" stop-opacity="0.36"/>
+      </linearGradient>
+      <!-- Soft glow around the edge of the arch -->
+      <filter id="glow" x="-10%" y="-10%" width="120%" height="120%">
+        <feGaussianBlur stdDeviation="9" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+
+    <!-- The right size is chosen automatically by the script at the bottom -->
+    <image id="cover-img" href="images/cover-1920.webp" x="0" y="0" width="2560" height="1440"
+           preserveAspectRatio="none"/>
+
+    <!-- Arch 1 (left, large) -->
+    <a class="arch" href="projects/project1.html" aria-label="Project 1">
+      <path d="M 547 67 L 518 59 L 488 55 L 452 55 L 417 61 L 395 72 L 376 85 L 363 100 L 357 113
+               L 218 493 L 199 538 L 187 578 L 164 635 L 162 646 L 10 1067 L 0 1079 L 0 1340 L 475 1340
+               L 584 826 L 584 816 L 595 778 L 594 767 L 600 756 L 610 710 L 614 672 L 625 635
+               L 632 595 L 641 564 L 641 546 L 647 534 L 684 362 L 676 291 L 650 213 L 626 155
+               L 615 135 Z"/>
+      <text x="263" y="1100">Project 1</text>
+    </a>
+
+    <!-- Arch 2 -->
+    <a class="arch" href="projects/project2.html" aria-label="Project 2">
+      <path d="M 929 327 L 908 328 L 871 336 L 845 346 L 821 359 L 801 374 L 776 403 L 767 428
+               L 741 554 L 731 624 L 704 775 L 696 804 L 687 868 L 678 904 L 672 956 L 602 1340
+               L 1000 1340 L 1011 1203 L 1010 1184 L 1017 1127 L 1015 1118 L 1019 1098 L 1023 1045
+               L 1022 1019 L 1027 990 L 1048 714 L 1050 660 L 1059 555 L 1060 511 L 1053 491 L 1053 478
+               L 1046 461 L 1006 396 L 978 362 L 953 337 Z"/>
+      <text x="832" y="1100">Project 2</text>
+    </a>
+
+    <!-- Arch 3 (center, pointed) -->
+    <a class="arch" href="projects/project3.html" aria-label="Project 3">
+      <path d="M 1271 398 L 1230 419 L 1191 450 L 1155 491 L 1141 521 L 1133 613 L 1132 687 L 1114 1016
+               L 1114 1057 L 1110 1090 L 1111 1123 L 1101 1340 L 1456 1340 L 1450 1183 L 1446 1165
+               L 1448 1156 L 1441 966 L 1430 809 L 1432 792 L 1418 529 L 1409 505 L 1391 478 L 1358 442
+               L 1337 425 L 1309 408 L 1288 398 Z"/>
+      <text x="1278" y="1100">Project 3</text>
+    </a>
+
+    <!-- Arch 4 -->
+    <a class="arch" href="projects/project4.html" aria-label="Project 4">
+      <path d="M 1628 330 L 1601 341 L 1570 374 L 1532 424 L 1506 482 L 1498 526 L 1504 636 L 1512 716
+               L 1516 799 L 1536 1047 L 1536 1079 L 1556 1340 L 1951 1340 L 1928 1200 L 1922 1183
+               L 1915 1144 L 1914 1120 L 1894 1019 L 1878 917 L 1873 904 L 1859 808 L 1836 694
+               L 1837 685 L 1823 619 L 1807 516 L 1787 419 L 1780 405 L 1766 387 L 1748 370 L 1727 356
+               L 1703 344 L 1672 334 L 1647 330 Z"/>
+      <text x="1724" y="1100">Project 4</text>
+    </a>
+
+    <!-- Arch 5 (right, large) -->
+    <a class="arch" href="projects/project5.html" aria-label="Project 5">
+      <path d="M 2009 75 L 1943 136 L 1922 179 L 1896 250 L 1886 287 L 1878 330 L 1876 366 L 1908 538
+               L 1946 707 L 2003 993 L 2079 1340 L 2560 1340 L 2560 1114 L 2547 1098 L 2444 811
+               L 2435 778 L 2407 708 L 2398 674 L 2311 438 L 2297 392 L 2282 358 L 2194 117 L 2187 105
+               L 2158 79 L 2137 73 L 2120 65 L 2096 62 L 2053 63 Z"/>
+      <text x="2287" y="1100">Project 5</text>
+    </a>
+  </svg>
+
+  <!-- Only visible when a phone is held upright -->
+  <div class="rotate-msg">
+    <div class="icon">&#128241;</div>
+    <p>Please rotate your phone<br>to landscape to view the portfolio</p>
+  </div>
+
+  <script>
+    // Picks the smallest cover image that still looks sharp on this device,
+    // and steps down one size on slow or data-saver connections.
+    (function () {
+      var files = [
+        'images/cover-1280.webp',   // small
+        'images/cover-1920.webp',   // medium
+        'images/cover-2560.webp'    // large
+      ];
+      var img = document.getElementById('cover-img');
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);   // ignore extra-sharp screens, saves data
+
+      // Width the image needs to cover the screen without being blurry
+      var needed = Math.max(window.innerWidth, window.innerHeight * 16 / 9) * dpr;
+      var level = needed <= 1280 ? 0 : (needed <= 1920 ? 1 : 2);
+
+      var c = navigator.connection;
+      if (c && (c.saveData || /(^|-)(slow-2g|2g|3g)$/.test(c.effectiveType || ''))) {
+        level = Math.max(0, level - 1);
+      }
+
+      // If a file fails to load, try the other sizes
+      var order = [level];
+      [1, 0, 2].forEach(function (i) { if (order.indexOf(i) === -1) order.push(i); });
+      var tried = 0;
+      img.addEventListener('error', function () {
+        tried++;
+        if (tried < order.length) img.setAttribute('href', files[order[tried]]);
+      });
+      img.setAttribute('href', files[order[0]]);
+    })();
+
+    // Add ?debug=1 to the address to see the arch outlines in red
+    if (location.search.indexOf('debug') !== -1) {
+      document.body.classList.add('debug');
+    }
+  </script>
+</body>
+</html>
