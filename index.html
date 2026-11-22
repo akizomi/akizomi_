@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!--
+    The image and the arch shapes live in ONE svg with the same coordinate
+    system (2560 x 1440 = your image size). They always scale and crop together,
+    so each clickable arch stays exactly on top of its arch in the image.
+  -->
+  <svg class="cover" viewBox="0 0 2560 1440" preserveAspectRatio="xMidYMid slice"
+       role="img" aria-label="Portfolio cover: gothic pavilion with five arches">
+
+    <image href="images/cover.png" x="0" y="0" width="2560" height="1440"
+           preserveAspectRatio="none"/>
+
+    <!-- Arch 1 (left, large) -->
+    <a class="arch" href="projects/project1.html" aria-label="Project 1">
+      <path d="M 0 1340 L 0 1050 L 60 900 L 120 700 L 160 500 L 220 350 L 300 200 L 375 100
+               C 430 60 520 50 580 100 C 640 150 680 250 685 340
+               L 670 500 L 610 800 L 560 1000 L 500 1240 L 480 1340 Z"/>
+      <text x="330" y="1100">Project 1</text>
+    </a>
+
+    <!-- Arch 2 -->
+    <a class="arch" href="projects/project2.html" aria-label="Project 2">
+      <path d="M 600 1340 L 620 1240 L 700 800 L 745 500 L 762 410
+               C 810 360 870 328 930 328 C 1000 330 1050 390 1070 460
+               L 1055 600 L 1040 800 L 1015 1240 L 1012 1340 Z"/>
+      <text x="850" y="1100">Project 2</text>
+    </a>
+
+    <!-- Arch 3 (center, pointed) -->
+    <a class="arch" href="projects/project3.html" aria-label="Project 3">
+      <path d="M 1100 1340 L 1100 1240 L 1115 1000 L 1130 600 L 1135 500
+               C 1160 450 1220 410 1280 393 C 1340 410 1400 450 1425 500
+               L 1430 600 L 1445 1000 L 1460 1240 L 1460 1340 Z"/>
+      <text x="1280" y="1100">Project 3</text>
+    </a>
+
+    <!-- Arch 4 -->
+    <a class="arch" href="projects/project4.html" aria-label="Project 4">
+      <path d="M 1548 1340 L 1545 1240 L 1520 800 L 1505 600 L 1490 460
+               C 1510 390 1560 330 1630 328 C 1690 328 1750 360 1798 410
+               L 1815 500 L 1860 800 L 1940 1240 L 1960 1340 Z"/>
+      <text x="1710" y="1100">Project 4</text>
+    </a>
+
+    <!-- Arch 5 (right, large) -->
+    <a class="arch" href="projects/project5.html" aria-label="Project 5">
+      <path d="M 2080 1340 L 2060 1240 L 2000 1000 L 1950 800 L 1890 500 L 1875 340
+               C 1880 250 1930 120 2040 75 C 2120 60 2190 70 2215 90
+               L 2290 300 L 2440 600 L 2560 900 L 2560 1340 Z"/>
+      <text x="2260" y="1100">Project 5</text>
+    </a>
+  </svg>
+
+  <!-- Only visible when a phone is held upright -->
+  <div class="rotate-msg">
+    <div class="icon">📱</div>
+    <p>Please rotate your phone<br>to landscape to view the portfolio</p>
+  </div>
+
+  <script>
+    // Add ?debug=1 to the address to see the arch outlines in red
+    if (location.search.indexOf('debug') !== -1) {
+      document.body.classList.add('debug');
+    }
+  </script>
+</body>
+</html>
